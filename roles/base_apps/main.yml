@@ -9,3 +9,6 @@
   ansible.builtin.package:
     name: nano
     state: present
+
+- set_fact: build_type="base_apps"
+  

@@ -11,4 +11,4 @@
     docker_install_compose_plugin: true
     docker_install_compose: false
 
- 
+ - set_fact: build_type="docker"
