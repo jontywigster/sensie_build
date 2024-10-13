@@ -5,6 +5,7 @@
   become: yes
   roles: 
     - role: docker
+    - role: add_user_to_docker_group
 
 
 
