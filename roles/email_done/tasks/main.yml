@@ -1,0 +1,10 @@
+---
+    
+- name: Notify ansible finished
+  mail:
+   host: mta.oc.baltsch.com
+   port: 465 
+   secure: always
+   to: fchorley@gmail.com
+   subject: sensie build ansible done
+   body: 'sensie build ansible done'
