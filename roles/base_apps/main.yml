@@ -10,6 +10,7 @@
     name: nano
     state: present
 
- - name: Set build type fact
-   ansible.builtin.set_fact: build_type="base_apps"
+- name: Set build type fact
+  set_fact: 
+    build_type="base_apps"
   
