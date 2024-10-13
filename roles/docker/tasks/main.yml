@@ -2,7 +2,6 @@
 
 - name: Install geerlingguy's Ansible Galaxy Docker role
   command: "ansible-galaxy install geerlingguy.docker"
-  when: ansible_os_family != 'VMware Photon OS'
 
 - name: install docker (non-photon)
   ansible.builtin.include_role:

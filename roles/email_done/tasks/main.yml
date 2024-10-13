@@ -1,10 +1,14 @@
 ---
     
+- name: Install community general
+  command: "ansible-galaxy collection install community.general"
+
 - name: Notify ansible finished
-  mail:
+  community.general.mail:
    host: mta.oc.baltsch.com
    port: 465 
    secure: always
    to: fchorley@gmail.com
    subject: "sensie build ansible {{ build_type }} done"
    body: 'sensie build ansible done'
+
