@@ -1,0 +1,41 @@
+---
+
+- name: find bootstrap files
+  find:
+    paths: /etc/profile.d/
+    patterns: "sensie_bootstrap*"
+  register: bootstrap_files_to_delete
+
+- name: remove bootstrap files
+  file:
+    path: "{{ item.path }}"
+    state: absent
+  with_items: "{{ bootstrap_files_to_delete.files }}"
+
+- name: remove autologin
+  ansible.builtin.file:
+    state: absent
+    path: /etc/systemd/system/getty@tty1.service.d/
+  
+- name: Not rebooting, systemd to reread configs
+  ansible.builtin.systemd:
+    daemon_reload: yes
+  when: reboot!=True
+  
+- name: reboot
+  debug:
+    msg: "reboot IS set"
+    verbosity: 1
+  when: reboot == True
+  
+- name: reboot
+  debug:
+    msg: "reboot NOT set"
+    verbosity: 1
+  when: reboot != True
+  
+- name: Reboot
+  shell: "sleep 5 && reboot"
+  async: 1
+  poll: 0
+  when: reboot == True

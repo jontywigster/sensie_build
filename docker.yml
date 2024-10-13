@@ -1,0 +1,13 @@
+--- 
+# docker install  
+  
+- hosts: localhost
+  become: yes
+  roles: 
+    - role: docker
+    - role: cleanup
+
+
+
+
+

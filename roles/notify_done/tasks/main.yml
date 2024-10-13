@@ -1,0 +1,9 @@
+---
+    
+- name: Send a success email
+  mail:
+   host: 10.0.0.1
+   port: 25 
+   to: fchorley@gmail.com
+   subject: Installation Done
+   body: 'The installation is complete.'

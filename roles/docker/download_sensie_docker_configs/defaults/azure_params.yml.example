@@ -1,0 +1,3 @@
+get_tars_list_url: https://zzz/yyy/xxx
+download_url_prefix: https://zzz/yyy/xxx
+download_url_suffix: ?a=b

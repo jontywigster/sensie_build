@@ -1,0 +1,7 @@
+---
+ 
+- name: stop iptables service
+  service:
+    name: iptables
+    state: stopped
+    enabled: no

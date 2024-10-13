@@ -1,0 +1,15 @@
+---
+
+- name: prompt for hostname
+  pause:
+    prompt: "\nPlease enter new hostname (leave empty to keep existing name {{ansible_facts.hostname}})"
+    echo: yes
+  register: hostname_prompt
+
+- set_fact: new_hostname="{{ hostname_prompt.user_input }}"
+
+
+
+
+
+

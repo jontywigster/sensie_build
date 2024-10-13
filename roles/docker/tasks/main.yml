@@ -1,0 +1,44 @@
+---
+
+- name: Install geerlingguy's Ansible Galaxy Docker role
+  command: "ansible-galaxy install geerlingguy.docker"
+  when: ansible_os_family != 'VMware Photon OS'
+
+- name: install docker (non-photon)
+  ansible.builtin.include_role:
+    name: geerlingguy.docker
+  vars:
+    docker_install_compose_plugin: true
+    docker_install_compose: false
+  when: ansible_os_family != 'VMware Photon OS'
+
+- name: ensure docker service started (photon)
+  service:
+    name: docker
+    state: restarted
+    enabled: true
+  when: ansible_os_family == 'VMware Photon OS'
+
+#- name: dbg arch (photon)
+#  debug:
+#    msg: "in docker compose! {{ansible_architecture}}"
+#  when: ansible_os_family == 'VMware Photon OS'
+
+- name: Create docker cli-plugin directory (photon)
+  file:
+    path: /usr/local/lib/docker/cli-plugins
+    state: directory
+    mode: 0755
+  when: ansible_os_family == 'VMware Photon OS'
+
+- name: download docker compose plugin (photon)
+  get_url:
+    url: "https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-{{ansible_architecture}}"
+    dest: /usr/local/lib/docker/cli-plugins/docker-compose
+    mode: 0755
+  when: ansible_os_family == 'VMware Photon OS'
+  
+- name: call download sensie docker configs role
+  ansible.builtin.include_role:
+    name: docker/download_sensie_docker_configs
+ 

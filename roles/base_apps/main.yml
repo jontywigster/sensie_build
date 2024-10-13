@@ -1,0 +1,16 @@
+---
+
+- name: Install vim
+  ansible.builtin.package:
+    name: vim
+    state: present
+
+- name: Install nano
+  ansible.builtin.package:
+    name: nano
+    state: present
+    
+- name: Install mq
+  ansible.builtin.package:
+    name: mq
+    state: present
