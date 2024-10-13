@@ -28,12 +28,6 @@
     verbosity: 1
   when: reboot == True
   
-- name: reboot
-  debug:
-    msg: "reboot NOT set"
-    verbosity: 1
-  when: reboot != True
-  
 - name: Reboot
   shell: "sleep 5 && reboot"
   async: 1
