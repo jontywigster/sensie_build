@@ -1,5 +1,0 @@
-creds.yml
-azure_params.yml
-/images/*
-*.log
-os_init/esxi/ks.cfg
