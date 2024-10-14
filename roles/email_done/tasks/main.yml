@@ -8,4 +8,4 @@
     to: fchorley@gmail.com
     sender: fchorley@gmail.com
     subject: "sensie build playbook {{ build_type }} done"
-    body: 'sensie build playbook {{ build_type }} d
+    body: "sensie build playbook {{ build_type }} done"
