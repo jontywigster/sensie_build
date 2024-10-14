@@ -1,7 +1,6 @@
 ---
 #  docker install  
   - import_playbook: base_apps.yml
-  - import_playbook: community_general.yml
   - import_playbook: docker.yml
   - import_playbook: email_done.yml
 
