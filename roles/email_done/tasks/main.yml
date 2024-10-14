@@ -2,11 +2,10 @@
 
 - name: Notify ansible finished
   community.general.mail:
-   host: mta.oc.baltsch.com
-   port: 465 
-   secure: always
-   to: fchorley@gmail.com
-   sender: fchorley@gmail.com
-   subject: "sensie build playbook {{ build_type }} done"
-   body: 'sensie build playbook {{ build_type }} done'
-
+    host: mta.oc.baltsch.com
+    port: 465 
+    secure: always
+    to: fchorley@gmail.com
+    sender: fchorley@gmail.com
+    subject: "sensie build playbook {{ build_type }} done"
+    body: 'sensie build playbook {{ build_type }} done'
