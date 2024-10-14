@@ -1,11 +1,3 @@
---- 
-# docker install  
-  
-- hosts: localhost
-  become: yes
-  roles: 
-    - role: docker
-
 ---
 #  docker install  
   - import_playbook: base_apps.yml
