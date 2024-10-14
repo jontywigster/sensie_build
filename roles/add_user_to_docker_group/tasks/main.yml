@@ -1,8 +1,0 @@
----
-
-- name: adding wigster to group sudo
-  user:
-    name: 'wigster'
-    groups: sudo
-    append: yes
- 
