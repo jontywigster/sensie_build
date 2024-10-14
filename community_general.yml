@@ -1,0 +1,12 @@
+--- 
+#base apps install  
+  
+- hosts: localhost
+  become: yes
+  roles:
+    - role: install_community_general
+
+
+
+
+
