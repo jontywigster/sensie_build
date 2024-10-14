@@ -1,10 +1,10 @@
 --- 
-# docker install  
+# send mail
   
 - hosts: localhost
   become: yes
   roles: 
-    - role: docker
+    - role: email_done
 
 
 
