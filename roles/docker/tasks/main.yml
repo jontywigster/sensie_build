@@ -16,7 +16,7 @@
   copy:
     content: |
       {
-      "userns-remap": "testuser"
+      "userns-remap": "default"
       }        
     dest: /etc/docker/daemon.json
     force: false
