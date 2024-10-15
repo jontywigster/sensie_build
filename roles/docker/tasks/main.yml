@@ -12,6 +12,18 @@
     docker_users:
      - wigster
 
+- name: enable docker daemon user ns remap
+  copy:
+    content: |
+      {
+      "userns-remap": "testuser"
+      }        
+    dest: /etc/docker/daemon.json
+    force: false
+    group: root
+    owner: root
+    mode: 0644
+
 - name: Set build type fact
   set_fact: 
     build_type="docker"
