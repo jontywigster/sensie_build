@@ -1,7 +1,11 @@
 ---
-#  docker install  
-  - import_playbook: base_apps.yml
-  - import_playbook: email_done.yml
+#base apps install  
+- hosts: localhost
+  become: yes
+  roles:
+    - role: base_apps
+    - role: email_done
+    - role: reboot
 
 
 
