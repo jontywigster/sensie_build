@@ -1,23 +1,5 @@
-- name: create systemd service to run post-boot playbook
-  copy:
-    content: |
-      [Unit]
-      Description=playbook
-      Before=motd-news.service
-          
-      [Service]
-      Type=oneshot
-      ExecStart=/opt/sensie_build/notify_done.sh
-      StandardOutput=journal+console
-          
-      [Install]
-      WantedBy=multi-user.target       
-    dest:  /etc/systemd/system/startup_playbook.service
-    force: false
-    group: root
-    owner: root
-    mode: 0644
-
-- name: force systemd to reread configs
-  ansible.builtin.systemd_service:
-    daemon_reload: true
+- name: create cron task to notify build done on reboot
+  ansible.builtin.cron:
+    name: "sensie build notify done"
+    special_time: reboot
+    job: "/opt/sensie_build/notify_done.sh"
