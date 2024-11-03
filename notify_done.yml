@@ -1,11 +1,5 @@
 ---
-#  notify build complete (after reboot)
-– name: Read the contents of a file
-file:
-path: /opt/sensie_build/buildtype.txt
-state: present
-register: build_type
-
+#  notify build complete
 - hosts: localhost
   become: yes
   roles:

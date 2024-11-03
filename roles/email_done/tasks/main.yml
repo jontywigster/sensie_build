@@ -1,5 +1,9 @@
 ---
 
+- name: set build type fact
+  set_fact:
+    build_type: "{{ lookup('ansible.builtin.file', '/opt/sensie_build/buildtype.txt') }}"
+
 - name: Notify ansible finished
   community.general.mail:
     host: mta.oc.baltsch.com

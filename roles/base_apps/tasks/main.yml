@@ -15,7 +15,7 @@
     content: |
       base_apps     
     dest: /opt/sensie_build/buildtype.txt
-    force: false
+    force: true
     group: root
     owner: root
     mode: 0644
