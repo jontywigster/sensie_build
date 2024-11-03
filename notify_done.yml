@@ -3,9 +3,7 @@
 - hosts: localhost
   become: yes
   roles:
-    - role: base_apps
-    - role: docker
-    - role: reboot
+    - role: email_done
 
 
 
