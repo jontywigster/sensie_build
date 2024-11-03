@@ -5,6 +5,7 @@
   roles:
     - role: base_apps
     - role: docker
+    - role: create_boot_notify_task
     - role: reboot
 
 
