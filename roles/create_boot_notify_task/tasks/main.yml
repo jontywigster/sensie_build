@@ -17,3 +17,7 @@
     group: root
     owner: root
     mode: 0644
+
+- name: force systemd to reread configs
+  ansible.builtin.systemd_service:
+    daemon_reload: true

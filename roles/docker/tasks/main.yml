@@ -24,6 +24,12 @@
     owner: root
     mode: 0644
 
-- name: Set build type fact
-  set_fact: 
-    build_type="docker"
+- name: set build type flag
+  copy:
+    content: |
+      docker     
+    dest: /opt/sensie_build/buildtype.txt
+    force: false
+    group: root
+    owner: root
+    mode: 0644

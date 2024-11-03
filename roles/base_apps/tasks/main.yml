@@ -10,7 +10,12 @@
     name: nano
     state: present
 
-- name: Set build type fact
-  set_fact: 
-    build_type="base_apps"
-  
+- name: set build type flag
+  copy:
+    content: |
+      base_apps     
+    dest: /opt/sensie_build/buildtype.txt
+    force: false
+    group: root
+    owner: root
+    mode: 0644
