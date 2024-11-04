@@ -10,6 +10,12 @@
     name: nano
     state: present
 
+- name: Install dos2unix
+  ansible.builtin.package:
+    name: dos2unix
+    state: present
+
+
 - name: set build type flag
   copy:
     content: |
