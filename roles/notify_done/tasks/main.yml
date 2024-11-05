@@ -1,7 +1,7 @@
 ---
 
 - name: set h-v kvp flag
-  shell: printf "sensie_build%0500ddonee%02044d" | tr '0' '\0' > /var/lib/hyperv/.kvp_pool_1
+  shell: printf "sensie_build%0500ddone%02044d" | tr '0' '\0' > /var/lib/hyperv/.kvp_pool_1
   async: 1
   poll: 0
 
@@ -9,7 +9,7 @@
   set_fact:
     build_type: "{{ lookup('ansible.builtin.file', '/opt/sensie_build/buildtype.txt') }}"
 
-- name: Notify ansible finished
+- name: notify ansible finished
   community.general.mail:
     host: mta.oc.baltsch.com
     port: 465 
@@ -18,3 +18,8 @@
     sender: fchorley@gmail.com
     subject: "sensie build playbook {{ build_type }} done"
     body: "sensie build playbook {{ build_type }} done"
+
+- name: remove crontab build done notify'
+  ansible.builtin.cron:
+    name: "sensie build notify done"
+    state: absent
