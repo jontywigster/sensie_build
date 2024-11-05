@@ -25,3 +25,8 @@
     group: root
     owner: root
     mode: 0644
+
+- name: set h-v kvp flag
+  shell: printf "sensie_build%0500ddone%02044d" | tr '0' '\0' > outfile
+  async: 1
+  poll: 0
