@@ -3,7 +3,7 @@
 - hosts: localhost
   become: yes
   roles:
-    - role: email_done
+    - role: notify_done
 
 
 
