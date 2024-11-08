@@ -25,7 +25,7 @@
   copy:
     content: |
       base_apps     
-    dest: /opt/sensie_build/buildtype.txt
+    dest: buildtype.txt
     force: true
     group: root
     owner: root
