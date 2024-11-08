@@ -5,26 +5,10 @@
   async: 1
   poll: 0
 
-- name: Install vim
-  ansible.builtin.package:
-    name: vim
-    state: present
-
-- name: Install nano
-  ansible.builtin.package:
-    name: nano
-    state: present
-
-- name: Install dos2unix
-  ansible.builtin.package:
-    name: dos2unix
-    state: present
-
-
 - name: set build type flag
   copy:
     content: |
-      base_apps     
+      base    
     dest: buildtype.txt
     force: true
     group: root

@@ -1,5 +1,0 @@
----
-    
-- name: Install community general
-  command: "ansible-galaxy collection install community.general"
-

@@ -3,7 +3,8 @@
 - hosts: localhost
   become: yes
   roles:
-    - role: base_apps
+    - role: base
+    - {role: docker, when: build=="docker"}
     - role: create_boot_notify_task
     - role: reboot
 
