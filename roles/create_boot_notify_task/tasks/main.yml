@@ -2,4 +2,4 @@
   ansible.builtin.cron:
     name: "sensie build notify done"
     special_time: reboot
-    job: "/opt/sensie_build/notify_done.sh"
+    job: "ansible-playbook" /opt/sensie_build/notify_done.yml
