@@ -9,6 +9,10 @@
   set_fact:
     build_type: "{{ lookup('ansible.builtin.file', 'buildtype.txt') }}"
 
+- name: read build log
+  set_fact:
+    build_log: "{{ lookup('ansible.builtin.file', './build.log') }}"
+
 - name: notify ansible finished
   community.general.mail:
     host: mta.oc.baltsch.com
@@ -16,8 +20,12 @@
     secure: always
     to: fchorley@gmail.com
     sender: fchorley@gmail.com
-    subject: "{{ansible_hostname}"
-    body: "sensie {{ build_type }} build done for {{ansible_hostname}}"
+    subject: "{{ansible_hostname}}"
+    body: |
+      sensie {{ build_type }} build done for {{ansible_hostname}}
+      
+      Build Log:
+      {{ build_log }}
 
 - name: remove crontab build done notify'
   ansible.builtin.cron:
