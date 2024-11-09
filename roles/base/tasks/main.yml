@@ -15,3 +15,24 @@
     owner: root
     mode: 0644
 
+- name: set root vimrc
+  copy:
+    content: |
+      syntax on
+      colorscheme evening  
+    dest: /root/.vimrc
+    force: true
+    group: root
+    owner: root
+    mode: 0644
+
+- name: set wigster vimrc
+  copy:
+    content: |
+      syntax on
+      colorscheme evening  
+    dest: /home/wigster/.vimrc
+    force: true
+    group: wigster
+    owner: wigster
+    mode: 0644
