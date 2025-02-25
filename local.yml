@@ -1,10 +1,9 @@
 ---
-#base apps install  
+#docker install  
 - hosts: localhost
   become: yes
   roles:
-    - role: base
-    - {role: docker, when: build=="docker"}
+    - role: docker
     - role: create_boot_notify_task
     - role: reboot
 
