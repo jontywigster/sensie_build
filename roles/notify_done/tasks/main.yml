@@ -5,13 +5,13 @@
   async: 1
   poll: 0
 
-- name: set build type fact
-  set_fact:
-    build_type: "{{ lookup('ansible.builtin.file', 'buildtype.txt') }}"
-
 - name: read build log
   set_fact:
     build_log: "{{ lookup('ansible.builtin.file', './build.log') }}"
+
+- name: read cloud-init log
+  set_fact:
+    cloud-init_log: "{{ lookup('ansible.builtin.file', '/var/log/cloud-init.log') }}"
 
 - name: notify ansible finished
   community.general.mail:
@@ -22,8 +22,11 @@
     sender: fchorley@gmail.com
     subject: "{{ansible_hostname}}"
     body: |
-      sensie {{ build_type }} build done for {{ansible_hostname}}
-      
+      build done for {{ansible_hostname}}
+
+      Cloud-Init Log:
+      {{ build_log }}
+
       Build Log:
       {{ build_log }}
 

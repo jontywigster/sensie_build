@@ -28,13 +28,3 @@
     group: root
     owner: root
     mode: 0644
-
-- name: set build type flag
-  copy:
-    content: |
-      docker     
-    dest: buildtype.txt
-    force: true
-    group: root
-    owner: root
-    mode: 0644
