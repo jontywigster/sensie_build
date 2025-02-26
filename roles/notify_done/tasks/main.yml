@@ -11,7 +11,7 @@
 
 - name: read cloud-init log
   set_fact:
-    cloud-init_log: "{{ lookup('ansible.builtin.file', '/var/log/cloud-init.log') }}"
+    cloudinit_log: "{{ lookup('ansible.builtin.file', '/var/log/cloud-init.log') }}"
 
 - name: notify ansible finished
   community.general.mail:
@@ -25,7 +25,7 @@
       build done for {{ansible_hostname}}
 
       Cloud-Init Log:
-      {{ build_log }}
+      {{ cloudinit_log }}
 
       Build Log:
       {{ build_log }}
