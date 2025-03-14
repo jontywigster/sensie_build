@@ -1,5 +1,0 @@
-- name: create cron task to notify build done on reboot
-  ansible.builtin.cron:
-    name: "sensie build notify done"
-    special_time: reboot
-    job: "ansible-playbook /opt/sensie_build/notify_done.yml"

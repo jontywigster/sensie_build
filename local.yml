@@ -5,9 +5,7 @@
   roles:
     - role: flag_start
     - {role: docker, when: build=="docker"}
-    - role: create_boot_notify_task
-    - role: reboot
-
+    - role: notify_done
 
 
 
