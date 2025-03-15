@@ -1,6 +1,12 @@
 ---
 # h-v ipv6 over wifi seems intermittent, prefer ipv4 for now
-- name: Update gai.conf to prefer IPv4
+- name: ensure gai.conf exists
+  file:
+    path: /etc/gai.conf
+    state: touch
+    mode: '0644'
+
+- name: ensure ipv4 priority is high
   lineinfile:
     path: /etc/gai.conf
     regexp: '^#precedence ::ffff:0:0/96'
