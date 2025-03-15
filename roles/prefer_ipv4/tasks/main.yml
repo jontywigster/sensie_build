@@ -1,12 +1,8 @@
 ---
 # h-v ipv6 over wifi seems intermittent, prefer ipv4 for now
-- name: Ensure IPv4 is preferred over IPv6
-  become: yes
-  tasks:
-    - name: Update gai.conf to prefer IPv4
-      lineinfile:
-        path: /etc/gai.conf
-        regexp: '^#precedence ::ffff:0:0/96'
-        line: 'precedence ::ffff:0:0/96  100'
-        state: present
-
+- name: Update gai.conf to prefer IPv4
+  lineinfile:
+    path: /etc/gai.conf
+    regexp: '^#precedence ::ffff:0:0/96'
+    line: 'precedence ::ffff:0:0/96  100'
+    state: present
