@@ -1,10 +1,5 @@
 ---
 
-- name: set h-v kvp flag
-  shell: printf "sensie_build%0500ddone%02044d" | tr '0' '\0' > /var/lib/hyperv/.kvp_pool_1
-  async: 1
-  poll: 0
-
 - name: read build log
   set_fact:
     build_log: "{{ lookup('ansible.builtin.file', './build.log') }}"
