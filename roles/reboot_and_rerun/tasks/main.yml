@@ -25,7 +25,7 @@
 
 - name: Force Reboot the machine
   shell:
-    cmd: "sleep 5 && reboot"
+    cmd: "shutdown -r now"
   async: 1
   poll: 0
   ignore_errors: true
