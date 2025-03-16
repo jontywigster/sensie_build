@@ -23,10 +23,11 @@
     job: "ansible-playbook /opt/sensie_build/local.yml -e os={{ os }}"
   when: not playbook_flag.stat.exists
 
-- name: Reboot the machine (first run only)
-  ansible.builtin.reboot:
-    msg: "Reboot for ubuntu h-v integration"
-    pre_reboot_delay: 5  # Trigger reboot within 5 seconds
+- name: Force Reboot the machine
+  shell:
+    cmd: "sleep 5 && reboot"
+  async: 1
+  poll: 0
+  ignore_errors: true
   when:
     - not playbook_flag.stat.exists
-

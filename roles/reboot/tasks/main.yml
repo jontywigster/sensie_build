@@ -1,5 +1,7 @@
 
-- name: Reboot the machine
-  ansible.builtin.reboot:
-    msg: "Reboot"
-    pre_reboot_delay: 5
+- name: Force Reboot the machine
+  shell:
+    cmd: "sleep 5 && reboot"
+  async: 1
+  poll: 0
+  ignore_errors: true
