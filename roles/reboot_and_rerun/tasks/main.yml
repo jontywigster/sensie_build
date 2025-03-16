@@ -20,7 +20,7 @@
   ansible.builtin.cron:
     name: "Run local playbook on boot"
     special_time: reboot
-    job: "ansible-playbook /opt/sensie_build/local.yml -e os={{ os }}"
+    job: "ansible-playbook /opt/sensie_build/local.yml -e os={{ os }} -e build={{ build }}"
   when: not playbook_flag.stat.exists
 
 - name: Force Reboot the machine
