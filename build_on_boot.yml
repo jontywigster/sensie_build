@@ -1,0 +1,6 @@
+---
+#  notify build complete
+- hosts: localhost
+  become: yes
+  roles:
+    - role: notify_done

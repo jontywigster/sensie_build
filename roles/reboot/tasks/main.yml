@@ -1,0 +1,32 @@
+---
+
+- name: Check if the playbook has already been run
+  ansible.builtin.stat:
+    path: /opt/sensie_build/post_reboot_flag
+  register: playbook_flag
+
+- name: Set a fact if this is the second run
+  ansible.builtin.set_fact:
+    second_run: true
+  when: playbook_flag.stat.exists
+
+- name: Create a flag file to mark the first run
+  ansible.builtin.file:
+    path: /opt/sensie_build/post_reboot_flag
+    state: touch
+  when: not playbook_flag.stat.exists
+
+- name: Create a cronjob to run the playbook on boot
+  ansible.builtin.cron:
+    name: "Run local playbook on boot"
+    special_time: reboot
+    job: "ansible-playbook /opt/sensie_build/local.yml -e os={{ os }}"
+  when: not playbook_flag.stat.exists
+
+- name: Reboot the machine (first run only)
+  ansible.builtin.reboot:
+    msg: "Reboot for ubuntu h-v integration"
+    pre_reboot_delay: 5  # Trigger reboot within 5 seconds
+  when:
+    - not playbook_flag.stat.exists
+

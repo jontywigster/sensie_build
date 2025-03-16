@@ -1,0 +1,14 @@
+---
+
+- name: set h-v kvp flag
+  shell: printf "sensie_build%0500dbase%02044d" | tr '0' '\0' > /var/lib/hyperv/.kvp_pool_1
+  async: 1
+  poll: 0
+
+- name: Debug variables
+  debug:
+    msg:
+      - "after_reboot: {{ after_reboot | default('undefined') }}"
+      - "os: {{ os | default('undefined') }}"
+      - "build: {{ build | default('undefined') }}"
+
