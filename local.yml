@@ -6,5 +6,6 @@
     - role: flag_start
     - { role: docker, when: build == "docker" }
     - role: notify_done
-    - { role: reboot, when: os == "alma" }
+    - { role: reboot, when: os == "alma" or os == "debianAZ" }
+
 
