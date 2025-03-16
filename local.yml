@@ -7,4 +7,5 @@
     - { role: docker, when: build == "docker" }
     - role: reboot
       when: os in ["alma", "debianAz"] 
+    - role: notify_done
 
