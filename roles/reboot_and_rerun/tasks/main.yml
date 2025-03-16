@@ -31,3 +31,9 @@
   ignore_errors: true
   when:
     - not playbook_flag.stat.exists
+
+- name: Remove the cronjob after reboot
+  ansible.builtin.cron:
+    name: "Run local playbook on boot"
+    state: absent
+  when: playbook_flag.stat.exists
