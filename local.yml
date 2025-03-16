@@ -3,7 +3,7 @@
   become: yes
   roles:
     - role: reboot_and_rerun
-      when: os in [ "alma", "ubuntu" ]
+      when: os in [ "alma", "debianAz", "ubuntu" ]
     - role: flag_start
     - { role: docker, when: build == "docker" }
     - role: notify_done
