@@ -2,8 +2,9 @@
 - hosts: localhost
   become: yes
   roles:
-    - { role: reboot, when: os == "ubuntu" }
+    - { role: reboot_and_rerun, when: os == "ubuntu" }
     - role: flag_start
     - { role: docker, when: build == "docker" }
     - role: notify_done
+    - { role: reboot, when: os == "alma" }
 
