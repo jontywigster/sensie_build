@@ -5,10 +5,4 @@
   async: 1
   poll: 0
 
-- name: Debug variables
-  debug:
-    msg:
-      - "after_reboot: {{ after_reboot | default('undefined') }}"
-      - "os: {{ os | default('undefined') }}"
-      - "build: {{ build | default('undefined') }}"
 
