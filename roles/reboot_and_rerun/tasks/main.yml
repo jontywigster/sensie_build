@@ -38,6 +38,20 @@
   when:
     - not playbook_flag.stat.exists
 
+- name: Force Reboot the machine
+  shell:
+    cmd: "shutdown -r now"
+  async: 1
+  poll: 0
+  ignore_errors: true
+  when:
+    - not playbook_flag.stat.exists
+
+- name: End play after reboot is triggered
+  meta: end_play
+  when:
+    - not playbook_flag.stat.exists
+
 - name: Remove the cronjob after reboot
   ansible.builtin.cron:
     name: "Run local playbook on boot"
