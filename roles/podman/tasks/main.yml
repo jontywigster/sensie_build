@@ -1,0 +1,6 @@
+---
+
+- name: install Podman
+  ansible.builtin.package:
+    name: podman
+    state: present

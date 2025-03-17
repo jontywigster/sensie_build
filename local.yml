@@ -6,4 +6,5 @@
       when: os in [ "alma", "debianAz", "ubuntu" ]
     - role: flag_start
     - { role: docker, when: build == "docker" }
+    - { role: podman, when: build == "podman" }
     - role: notify_done
