@@ -28,3 +28,11 @@
     group: root
     owner: root
     mode: 0644
+
+- name: Create /opt/docker with access restricted to wigster
+  file:
+    path: /opt/docker
+    state: directory
+    owner: wigster
+    group: wigster
+    mode: '0700'
