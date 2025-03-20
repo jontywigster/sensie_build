@@ -36,3 +36,12 @@
     owner: wigster
     group: wigster
     mode: '0700'
+
+- name: Create symbolic link in /home/wigster to /opt/docker
+  file:
+    src: /opt/docker
+    dest: /home/wigster/docker
+    state: link
+    owner: wigster
+    group: wigster
+    mode: '0777'
