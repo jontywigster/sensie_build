@@ -4,6 +4,11 @@
   shell: printf "sensie_build%0500ddock%02044d" | tr '0' '\0' > /var/lib/hyperv/.kvp_pool_1
   async: 1
   poll: 0
+  when: kvp_flag_enabled
+
+- name: Write to serial port
+  shell: echo "begin docker install" > /dev/ttyS0
+  when: serial_port_enabled
 
 - name: Install geerlingguy's Ansible Galaxy Docker role
   command: "ansible-galaxy install geerlingguy.docker"
