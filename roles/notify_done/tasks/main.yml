@@ -1,29 +1,29 @@
 ---
 
-- name: read build log
-  set_fact:
-    build_log: "{{ lookup('ansible.builtin.file', './build.log') }}"
+#- name: read build log
+#  set_fact:
+#    build_log: "{{ lookup('ansible.builtin.file', './build.log') }}"
+#
+#- name: read cloud-init log
+#  set_fact:
+#    cloudinit_log: "{{ lookup('ansible.builtin.file', '/var/log/cloud-init.log') }}"
 
-- name: read cloud-init log
-  set_fact:
-    cloudinit_log: "{{ lookup('ansible.builtin.file', '/var/log/cloud-init.log') }}"
-
-- name: notify ansible finished
-  community.general.mail:
-    host: mta.oc.baltsch.com
-    port: 465 
-    secure: always
-    to: fchorley@gmail.com
-    sender: fchorley@gmail.com
-    subject: "{{ansible_hostname}}"
-    body: |
-      build done for {{ansible_hostname}}
-
-      Cloud-Init Log:
-      {{ cloudinit_log }}
-
-      Build Log:
-      {{ build_log }}
+#- name: notify ansible finished
+#  community.general.mail:
+#    host: mta.oc.baltsch.com
+#    port: 465 
+#    secure: always
+#    to: fchorley@gmail.com
+#    sender: fchorley@gmail.com
+#    subject: "{{ansible_hostname}}"
+#    body: |
+#      build done for {{ansible_hostname}}
+#
+#      Cloud-Init Log:
+#      {{ cloudinit_log }}
+#
+#      Build Log:
+#      {{ build_log }}
 
 - name: set h-v kvp flag
   shell: printf "sensie_build%0500ddone%02044d" | tr '0' '\0' > /var/lib/hyperv/.kvp_pool_1
@@ -32,5 +32,5 @@
   when: kvp_flag_enabled
 
 - name: Write to serial port
-  shell: echo "ansible build complete" > /dev/ttyS0
+  shell: echo "{{ansible_hostname}} {{build}} ansible build done" > /dev/ttyS0
   when: serial_port_enabled
