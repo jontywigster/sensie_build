@@ -7,7 +7,7 @@
   when: kvp_flag_enabled
 
 - name: Write to serial port
-  shell: echo "begin install - docker" > /dev/ttyS0
+  shell: echo "ansible begin install - docker" > /dev/ttyS0
   when: serial_port_enabled
 
 - name: Install geerlingguy's Ansible Galaxy Docker role
