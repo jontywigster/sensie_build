@@ -32,5 +32,5 @@
   when: kvp_flag_enabled
 
 - name: Write to serial port
-  shell: echo "{{ansible_hostname}} {{build}} ansible build done" > /dev/ttyS0
+  shell: echo "ansible build done for {{ansible_hostname}} {{build}} " > /dev/ttyS0
   when: serial_port_enabled
