@@ -1,30 +1,22 @@
-- name: Install and configure k3sup and k3s
-  hosts: localhost
-  become: yes
-  tasks:
-    - name: Download k3sup
-      shell: curl -sLS https://get.k3sup.dev | sh
-      args:
-        creates: /usr/local/bin/k3sup
-
-    - name: Move k3sup to /usr/local/bin
-      shell: sudo install k3sup /usr/local/bin/
-      args:
-        creates: /usr/local/bin/k3sup
-
-    - name: Install k3s using k3sup
-      shell: |
-        k3sup install --local --k3s-extra-args "--disable servicelb"
-
-    - name: Export KUBECONFIG environment variable
-      shell: echo "export KUBECONFIG=/home/wigster/kubeconfig" >> ~/.bashrc
-      args:
-        creates: ~/.bashrc
-      register: export_kubeconfig
-
-    - name: Source bashrc to load the KUBECONFIG
-      shell: source ~/.bashrc
-      when: export_kubeconfig is changed
-
-    - name: Set kubectl context to default
-      shell: kubectl config use-context default
+---
+- name: Download k3sup
+  shell: curl -sLS https://get.k3sup.dev | sh
+  args:
+    creates: /usr/local/bin/k3sup
+- name: Move k3sup to /usr/local/bin
+  shell: sudo install k3sup /usr/local/bin/
+  args:
+    creates: /usr/local/bin/k3sup
+- name: Install k3s using k3sup
+  shell: |
+    k3sup install --local --k3s-extra-args "--disable servicelb"
+- name: Export KUBECONFIG environment variable
+  shell: echo "export KUBECONFIG=/home/wigster/kubeconfig" >> ~/.bashrc
+  args:
+    creates: ~/.bashrc
+  register: export_kubeconfig
+- name: Source bashrc to load the KUBECONFIG
+  shell: source ~/.bashrc
+  when: export_kubeconfig is changed
+- name: Set kubectl context to default
+  shell: kubectl config use-context default
