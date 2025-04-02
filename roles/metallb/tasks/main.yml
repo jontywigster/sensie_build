@@ -26,7 +26,7 @@
 
 - name: Render MetalLB configuration template
   template:
-    src: metalb/templates/metallb_config.j2
+    src: metallb_config.j2
     dest: /opt/k8s/metallb_config.yml
 
 - name: Apply MetalLB configuration
