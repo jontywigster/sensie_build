@@ -26,6 +26,11 @@
     state: present
     mode: '0755'
 
+- name: Source kubectl alias script
+  shell: source /etc/profile.d/kubectl_alias.sh
+  args:
+    executable: /bin/bash
+
 - name: Install Helm
   shell: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
   args:
