@@ -1,37 +1,32 @@
 ---
-- name: Setup Kubernetes and related tools
-  hosts: localhost
-  tasks:
-    # Step i: Install k3s
-    - name: Install k3s
-      shell: |
-        curl -sfL https://get.k3s.io | sudo sh -s - --disable servicelb --write-kubeconfig-mode 644
-      args:
-        creates: /usr/local/bin/k3s
 
-    # Step ii: Ensure bash completion is installed
-    - name: Install bash completion
-      package:
-        name: bash-completion
-        state: present
+- name: Install k3s
+  shell: |
+    curl -sfL https://get.k3s.io | sudo sh -s - --disable servicelb --write-kubeconfig-mode 644
+  args:
+    creates: /usr/local/bin/k3s
 
-    # Step iii: Enable kubectl completion
-    - name: Enable bash completion for kubectl
-      shell: |
-        source /usr/share/bash-completion/bash_completion
-        kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
-      args:
-        creates: /etc/bash_completion.d/kubectl
+- name: Ensure bash completion is installed
+  package:
+    name: bash-completion
+    state: present
 
-    # Step iv: Create kubectl alias
-    - name: Add alias for kubectl
-      lineinfile:
-        path: /home/wigster/.bashrc
-        line: "alias k=kubectl"
-        state: present
+- name: Enable bash completion for kubectl
+  shell: |
+    source /usr/share/bash-completion/bash_completion
+    kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
+  args:
+    creates: /etc/bash_completion.d/kubectl
 
-    # Step v: Install Helm
-    - name: Install Helm
-      shell: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
-      args:
-        creates: /usr/local/bin/helm
+- name: Add global alias for kubectl
+  lineinfile:
+    path: /etc/profile.d/kubectl_alias.sh
+    line: "alias k=kubectl"
+    create: yes
+    state: present
+    mode: '0755'
+
+- name: Install Helm
+  shell: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+  args:
+    creates: /usr/local/bin/helm
