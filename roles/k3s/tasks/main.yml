@@ -53,6 +53,11 @@
     group: wigster
     mode: '0777'
 
+- name: Install pip
+  package:
+    name: python3-pip
+    state: present
+
 - name: Ensure namespace for MetalLB exists
   k8s:
     state: present
