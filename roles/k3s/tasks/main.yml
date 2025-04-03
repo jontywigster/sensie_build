@@ -58,6 +58,13 @@
     name: python3-pip
     state: present
 
+- name: Install Python libraries for k8s module
+  pip:
+    name:
+      - kubernetes
+      - PyYAML
+      - jsonpatch
+
 - name: Ensure namespace for MetalLB exists
   k8s:
     state: present
