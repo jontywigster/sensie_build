@@ -1,0 +1,38 @@
+[33m4997252[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m note metallb use
+[33m8cd5939[m initial metallb tests done. Removed as will place k8s configs in own repo
+[33m8bfd44e[m set remote_tmp to /tmp
+[33m3d2fb57[m check if metallb namespace exists
+[33m6f80da7[m test remove path from template
+[33m731901e[m call metallb role
+[33md9e7e0e[m metallb test
+[33m18c70b4[m source alias
+[33mb1d05dc[m kubectl gloabl alias
+[33m4265137[m get k3s from k3s
+[33m6855aef[m k3s role typo
+[33m1a06db5[m k3s typo
+[33m35d6f0f[m add env var for k3s build
+[33m70fbeea[m temp test k3s
+[33mb8a9a5c[m k3s initial test
+[33m0dec553[m add ansible to serial output
+[33m300f93e[m rejig output messages
+[33mfa13cf6[m don't mail on completion
+[33m8deeee0[m don't reboot, add serial output and env vars to set whether kvp and serial are output
+[33m5e0f1db[m docker symlink
+[33mebc0ffe[m add docker folder
+[33mec1ac3f[m add podman
+[33m17ebc06[m end play after reboot is triggered
+[33ma9d9c0f[m flag rebooted
+[33m522c2d8[m add debianAz to reboot os list
+[33m465075b[m reboot first for h-v integration to pass messages. No reboot at end needed
+[33m57c4164[m alma reboot before rerun test
+[33mda3cd24[m copy paste error
+[33m72ec510[m notify done
+[33mc41a77d[m add in condition
+[33m7bb6768[m reboot debaz
+[33m1e293f0[m remove cronjob on reboot
+[33m2b67ade[m remove old test file, add build var to cronjob
+[33m5a1ecde[m remove debug vars
+[33m21edf68[m use shutdown -r instead of reboot
+[33m4a56d46[m force reboot via shell command
+[33m460a6ae[m reboot alma
+[33md509ae3[m initial commit
