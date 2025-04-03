@@ -35,3 +35,29 @@
   shell: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
   args:
     creates: /usr/local/bin/helm
+
+- name: Create /opt/k8s with access restricted to wigster
+  file:
+    path: /opt/k8s
+    state: directory
+    owner: wigster
+    group: wigster
+    mode: '0700'
+
+- name: Create symbolic link in /home/wigster to /opt/k8s
+  file:
+    src: /opt/k8s
+    dest: /home/wigster/k8s
+    state: link
+    owner: wigster
+    group: wigster
+    mode: '0777'
+
+- name: Ensure namespace for MetalLB exists
+  shell: kubectl get namespace metallb-system || kubectl create namespace metallb-system
+  args:
+    warn: false
+
+- name: Apply MetalLB manifest
+  command: kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/main/config/manifests/metallb-native.yaml
+
