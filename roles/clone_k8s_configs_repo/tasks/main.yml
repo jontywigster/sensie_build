@@ -10,6 +10,8 @@
   git:
     repo: "https://github.com/jontywigster/k8s_sensie_configs.git"
     dest: "/opt/k8s_sensie_configs"
+  become: yes
+  become_user: wigster
 
 - name: Create symbolic link in /home/wigster to /opt/k8s_sensie_configs
   file:
