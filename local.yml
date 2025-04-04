@@ -6,4 +6,5 @@
     - { role: docker, when: build == "docker" }
     - { role: podman, when: build == "podman" }
     - { role: k3s, when: build == "k3s" }
+    - { role: clone_k8s_configs_repo, when: clone_k8s_configs_repo == "yes" }
     - role: notify_done
