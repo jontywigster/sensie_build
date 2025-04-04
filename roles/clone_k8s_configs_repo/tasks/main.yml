@@ -1,6 +1,6 @@
 - name: Create /opt/k8s_sensie_configs with access restricted to wigster
   file:
-    path: /opt/k8s
+    path: /opt/k8s_sensie_configs
     state: directory
     owner: wigster
     group: wigster
