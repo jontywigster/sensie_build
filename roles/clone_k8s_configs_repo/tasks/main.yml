@@ -1,23 +1,23 @@
-- name: Create /opt/k8s_sensie_configs with access restricted to wigster
+- name: Create /opt/k8s_configs with access restricted to CONTAINER_USER
   file:
-    path: /opt/k8s_sensie_configs
+    path: /opt/k8s_configs
     state: directory
-    owner: wigster
-    group: wigster
+    owner: "{{ lookup('env', 'CONTAINER_USER') }}"
+    group: "{{ lookup('env', 'CONTAINER_USER') }}"
     mode: '0700'
 
 - name: Clone k8s repo
   git:
-    repo: "https://github.com/jontywigster/k8s_sensie_configs.git"
-    dest: "/opt/k8s_sensie_configs"
+    repo: "https://github.com/jontywigster/k8s_configs.git"
+    dest: "/opt/k8s_configs"
   become: yes
-  become_user: wigster
+  become_user: "{{ lookup('env', 'CONTAINER_USER') }}"
 
-- name: Create symbolic link in /home/wigster to /opt/k8s_sensie_configs
+- name: Create symbolic link in CONTAINER_USER home to /opt/k8s_configs
   file:
-    src: /opt/k8s_sensie_configs
-    dest: /home/wigster/k8s_sensie_configs
+    src: /opt/k8s_configs
+    dest: /home/{{ lookup('env', 'CONTAINER_USER') }}/k8s_configs
     state: link
-    owner: wigster
-    group: wigster
+    owner: "{{ lookup('env', 'CONTAINER_USER') }}"
+    group: "{{ lookup('env', 'CONTAINER_USER') }}"
     mode: '0777'

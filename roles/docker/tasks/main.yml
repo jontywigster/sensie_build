@@ -19,8 +19,8 @@
   vars:
     docker_install_compose_plugin: true
     docker_install_compose: false
-    docker_users:
-     - wigster
+    CONTAINER_USERs:
+     - "{{ lookup('env', 'CONTAINER_USER') }}"
 
 - name: enable docker daemon user ns remap
   copy:
@@ -34,19 +34,28 @@
     owner: root
     mode: 0644
 
-- name: Create /opt/docker with access restricted to wigster
+- name: Create /opt/docker with access restricted to the specified user
   file:
     path: /opt/docker
     state: directory
-    owner: wigster
-    group: wigster
+    owner: "{{ lookup('env', 'CONTAINER_USER') }}"
+    group: "{{ lookup('env', 'CONTAINER_USER') }}"
     mode: '0700'
 
-- name: Create symbolic link in /home/wigster to /opt/docker
+- name: Create /opt/docker with access restricted to a user from environment variable
+  file:
+    path: /opt/docker
+    state: directory
+    owner: "{{ lookup('env', 'CONTAINER_USER') }}"
+    group: "{{ lookup('env', 'CONTAINER_USER') }}"
+    mode: '0700'
+
+
+- name: Create symbolic link in CONTAINER_USER home to /opt/docker
   file:
     src: /opt/docker
-    dest: /home/wigster/docker
+    dest: "/home/{{ lookup('env', 'CONTAINER_USER') }}/docker"
     state: link
-    owner: wigster
-    group: wigster
+    owner: "{{ lookup('env', 'CONTAINER_USER') }}"
+    group: "{{ lookup('env', 'CONTAINER_USER') }}"
     mode: '0777'

@@ -1,0 +1,4 @@
+- name: Add MetalLB Helm repository
+  shell: |
+    helm repo add metallb https://metallb.github.io/metallb
+    helm repo update
