@@ -20,7 +20,7 @@
     docker_install_compose_plugin: true
     docker_install_compose: false
     CONTAINER_USERs:
-     - "{{ lookup('env', 'CONTAINER_USER') }}"
+     - "{{ CONTAINER_USER }}"
 
 - name: enable docker daemon user ns remap
   copy:
@@ -38,24 +38,24 @@
   file:
     path: /opt/docker
     state: directory
-    owner: "{{ lookup('env', 'CONTAINER_USER') }}"
-    group: "{{ lookup('env', 'CONTAINER_USER') }}"
+    owner: "{{ CONTAINER_USER }}"
+    group: "{{ CONTAINER_USER }}"
     mode: '0700'
 
 - name: Create /opt/docker with access restricted to a user from environment variable
   file:
     path: /opt/docker
     state: directory
-    owner: "{{ lookup('env', 'CONTAINER_USER') }}"
-    group: "{{ lookup('env', 'CONTAINER_USER') }}"
+    owner: "{{ CONTAINER_USER }}"
+    group: "{{ CONTAINER_USER }}"
     mode: '0700'
 
 
 - name: Create symbolic link in CONTAINER_USER home to /opt/docker
   file:
     src: /opt/docker
-    dest: "/home/{{ lookup('env', 'CONTAINER_USER') }}/docker"
+    dest: "/home/{{ CONTAINER_USER }}/docker"
     state: link
-    owner: "{{ lookup('env', 'CONTAINER_USER') }}"
-    group: "{{ lookup('env', 'CONTAINER_USER') }}"
+    owner: "{{ CONTAINER_USER }}"
+    group: "{{ CONTAINER_USER }}"
     mode: '0777'

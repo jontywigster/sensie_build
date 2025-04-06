@@ -2,8 +2,8 @@
   file:
     path: /opt/k8s_configs
     state: directory
-    owner: "{{ lookup('env', 'CONTAINER_USER') }}"
-    group: "{{ lookup('env', 'CONTAINER_USER') }}"
+    owner: "{{ CONTAINER_USER }}"
+    group: "{{ CONTAINER_USER }}"
     mode: '0700'
 
 - name: Clone k8s repo
@@ -11,13 +11,13 @@
     repo: "https://github.com/jontywigster/k8s_configs.git"
     dest: "/opt/k8s_configs"
   become: yes
-  become_user: "{{ lookup('env', 'CONTAINER_USER') }}"
+  become_user: "{{ CONTAINER_USER }}"
 
 - name: Create symbolic link in CONTAINER_USER home to /opt/k8s_configs
   file:
     src: /opt/k8s_configs
-    dest: /home/{{ lookup('env', 'CONTAINER_USER') }}/k8s_configs
+    dest: /home/{{ CONTAINER_USER }}/k8s_configs
     state: link
-    owner: "{{ lookup('env', 'CONTAINER_USER') }}"
-    group: "{{ lookup('env', 'CONTAINER_USER') }}"
+    owner: "{{ CONTAINER_USER }}"
+    group: "{{ CONTAINER_USER }}"
     mode: '0777'
