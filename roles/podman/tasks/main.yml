@@ -1,7 +1,7 @@
 ---
 - name: Write to serial port
   shell: echo "ansible begin install - podman" > /dev/ttyS0
-  when: serial_port_enabled
+  when: serial_flag
 
 - name: install Podman
   ansible.builtin.package:

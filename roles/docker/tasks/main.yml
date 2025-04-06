@@ -4,11 +4,11 @@
   shell: printf "sensie_build%0500ddock%02044d" | tr '0' '\0' > /var/lib/hyperv/.kvp_pool_1
   async: 1
   poll: 0
-  when: kvp_flag_enabled
+  when: kvp_flag
 
 - name: Write to serial port
   shell: echo "ansible begin install - docker" > /dev/ttyS0
-  when: serial_port_enabled
+  when: serial_flag
 
 - name: Install geerlingguy's Ansible Galaxy Docker role
   command: "ansible-galaxy install geerlingguy.docker"
@@ -19,8 +19,8 @@
   vars:
     docker_install_compose_plugin: true
     docker_install_compose: false
-    CONTAINER_USERs:
-     - "{{ CONTAINER_USER }}"
+    cntnr_usrs:
+     - "{{ cntnr_usr }}"
 
 - name: enable docker daemon user ns remap
   copy:
@@ -38,24 +38,24 @@
   file:
     path: /opt/docker
     state: directory
-    owner: "{{ CONTAINER_USER }}"
-    group: "{{ CONTAINER_USER }}"
+    owner: "{{ cntnr_usr }}"
+    group: "{{ cntnr_usr }}"
     mode: '0700'
 
 - name: Create /opt/docker with access restricted to a user from environment variable
   file:
     path: /opt/docker
     state: directory
-    owner: "{{ CONTAINER_USER }}"
-    group: "{{ CONTAINER_USER }}"
+    owner: "{{ cntnr_usr }}"
+    group: "{{ cntnr_usr }}"
     mode: '0700'
 
 
-- name: Create symbolic link in CONTAINER_USER home to /opt/docker
+- name: Create symbolic link in cntnr_usr home to /opt/docker
   file:
     src: /opt/docker
-    dest: "/home/{{ CONTAINER_USER }}/docker"
+    dest: "/home/{{ cntnr_usr }}/docker"
     state: link
-    owner: "{{ CONTAINER_USER }}"
-    group: "{{ CONTAINER_USER }}"
+    owner: "{{ cntnr_usr }}"
+    group: "{{ cntnr_usr }}"
     mode: '0777'
