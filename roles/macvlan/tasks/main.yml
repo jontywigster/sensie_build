@@ -1,0 +1,44 @@
+---
+
+#- name: Debug raw macvlans input
+#  debug:
+#    var: macvlans
+
+- name: Parse and validate macvlans input
+  set_fact:
+    macvlans_clean: "{{ macvlans | from_json }}"
+
+#- name: Debug cleaned macvlans input
+#  debug:
+#    var: macvlans_clean
+#
+#- name: Show first macvlan entry
+#  debug:
+#    msg: "The first macvlan entry is: {{ macvlans_clean[0] }}"
+#
+#- name: Show second macvlan entry
+#  debug:
+#    msg: "The second macvlan entry is: {{ macvlans_clean[1] }}"
+
+#- name: Validate macvlan transformation
+#  debug:
+#    msg: "{{ macvlans_clean | map('split', ',') | list }}"
+
+#- name: debug each macvlan
+#  debug:
+#    msg: "Creating interface {{ item[0] }} with IP {{ item[1] }}"
+#  loop: "{{ macvlans_clean | map('split', ',') | list }}"
+
+- name: Process each macvlan
+  shell: |
+    ip link add link eth0 name {{ item[0] }} type macvlan mode bridge
+    ip addr add {{ item[1] }} dev {{ item[0] }}
+    ip link set {{ item[0] }} up
+  loop: "{{ macvlans_clean | map('split', ',') | list }}"
+  register: macvlan_shell_output
+
+- name: Debug shell outputs
+  debug:
+    var: macvlan_shell_output.results
+
+

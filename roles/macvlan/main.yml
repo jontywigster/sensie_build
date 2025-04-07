@@ -1,8 +1,0 @@
-- name: Create macvlan interfaces if specified
-  shell: |
-    ip link add link eth0 name {{ item.name }} type macvlan mode bridge
-    ip addr add {{ item.ip }} dev {{ item.name }}
-    ip link set {{ item.name }} up
-  loop: "{{ macvlans | default([]) | map('split', ',') | map('zip', ['name', 'ip']) | map('dict') | list }}"
-  when: macvlans is defined
-
