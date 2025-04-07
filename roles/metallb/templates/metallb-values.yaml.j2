@@ -1,0 +1,8 @@
+configInline:
+  address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+{% for range in metallb_ip_range %}
+        - {{ range }}
+{% endfor %}

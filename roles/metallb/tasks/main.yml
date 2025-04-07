@@ -1,4 +1,16 @@
+- name: Generate MetalLB values file from IP range list
+  template:
+    src: metallb-values.yaml.j2
+    dest: /tmp/metallb-values.yaml
+  when: metallb_ip_range is defined
+
 - name: Add MetalLB Helm repository
   shell: |
     helm repo add metallb https://metallb.github.io/metallb
     helm repo update
+
+- name: Install MetalLB via Helm with custom IP ranges
+  shell: |
+    helm install metallb metallb/metallb --namespace metallb-system --create-namespace \
+      --values /tmp/metallb-values.yaml
+  when: metallb_ip_range is defined
