@@ -1,8 +1,32 @@
+---
+#- name: Debug raw metallb_ranges input
+#  debug:
+#    var: metallb_ranges
+
+- name: Parse and validate metallb_ranges input
+  set_fact:
+    metallb_ranges_clean: "{{ metallb_ranges | from_json }}"
+
+#- name: Debug cleaned metallb_ranges input
+#  debug:
+#    var: metallb_ranges_clean
+#
+#- name: Show first range entry
+#  debug:
+#    msg: "The first range entry is: {{ metallb_ranges_clean[0] }}"
+
+#- name: Show second range entry
+#  debug:
+#    msg: "The second range entry is: {{ metallb_ranges_clean[1] }}"
+
+
 - name: Generate MetalLB values file from IP range list
+  become: true 
   template:
     src: metallb-values.yaml.j2
     dest: /tmp/metallb-values.yaml
-  when: metallb_ip_range is defined
+  environment:
+    TMPDIR: /tmp
 
 - name: Add MetalLB Helm repository
   shell: |
@@ -13,4 +37,3 @@
   shell: |
     helm install metallb metallb/metallb --namespace metallb-system --create-namespace \
       --values /tmp/metallb-values.yaml
-  when: metallb_ip_range is defined

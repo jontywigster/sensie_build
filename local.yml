@@ -7,6 +7,6 @@
     - { role: podman, when: build == "podman" }
     - { role: k3s, when: build == "k3s" }
     - { role: macvlan, when: macvlans is defined }
-    - { role: metallb, when: build == "k3s" }
+    - { role: metallb, when: build == "k3s" and metallb_ranges is defined }
     - { role: clone_k8s_configs_repo, when: "(clone_k8s_configs_repo | default('no')) == 'yes'" }
     - role: notify_done

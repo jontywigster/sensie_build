@@ -1,8 +1,18 @@
-configInline:
-  address-pools:
-    - name: default
-      protocol: layer2
-      addresses:
-{% for range in metallb_ip_range %}
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  namespace: metallb-system
+  name: my-ip-pool
+spec:
+  addresses:
+{% for range in metallb_ranges_clean %}
         - {{ range }}
 {% endfor %}
+
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  namespace: metallb-system
+  name: my-l2-advertisement
+spec: {}

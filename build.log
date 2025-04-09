@@ -1,0 +1,482 @@
+2025-04-08 00:41:45,724 p=91008 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 00:41:45,729 p=91008 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 00:41:46,425 p=91008 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:41:46,435 p=91008 u=wigster n=ansible | TASK [metallb : Debug raw metallb_ranges input] ************************************************************************
+2025-04-08 00:41:46,451 p=91008 u=wigster n=ansible | fatal: [localhost]: FAILED! => 
+  msg: |-
+    The conditional check 'build == "k3s" and metallb_ranges is defined' failed. The error was: error while evaluating conditional (build == "k3s" and metallb_ranges is defined): 'build' is undefined. 'build' is undefined
+  
+    The error appears to be in '/opt/docker/sensie_build/roles/metallb/tasks/main.yml': line 3, column 3, but may
+    be elsewhere in the file depending on the exact syntax problem.
+  
+    The offending line appears to be:
+  
+  
+    - name: Debug raw metallb_ranges input
+      ^ here
+2025-04-08 00:41:46,452 p=91008 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 00:41:46,452 p=91008 u=wigster n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-08 00:42:17,241 p=91210 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 00:42:17,247 p=91210 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 00:42:17,923 p=91210 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:42:17,934 p=91210 u=wigster n=ansible | TASK [metallb : Debug raw metallb_ranges input] ************************************************************************
+2025-04-08 00:42:17,952 p=91210 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 00:42:17,969 p=91210 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 00:42:17,969 p=91210 u=wigster n=ansible | localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 00:43:38,291 p=91529 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 00:43:38,296 p=91529 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 00:43:38,959 p=91529 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:43:38,969 p=91529 u=wigster n=ansible | TASK [metallb : Debug raw metallb_ranges input] ************************************************************************
+2025-04-08 00:43:38,986 p=91529 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 00:43:38,990 p=91529 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 00:43:39,018 p=91529 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:43:39,034 p=91529 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 00:43:39,034 p=91529 u=wigster n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 00:45:03,450 p=91862 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 00:45:03,455 p=91862 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 00:45:04,113 p=91862 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:45:04,122 p=91862 u=wigster n=ansible | TASK [metallb : Debug raw metallb_ranges input] ************************************************************************
+2025-04-08 00:45:04,138 p=91862 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 00:45:04,143 p=91862 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 00:45:04,172 p=91862 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:45:04,177 p=91862 u=wigster n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 00:45:04,195 p=91862 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 00:45:04,212 p=91862 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 00:45:04,213 p=91862 u=wigster n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 00:45:37,921 p=92113 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 00:45:37,926 p=92113 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 00:45:38,586 p=92113 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:45:38,596 p=92113 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 00:45:38,624 p=92113 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:45:38,629 p=92113 u=wigster n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 00:45:38,648 p=92113 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 00:45:38,665 p=92113 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 00:45:38,665 p=92113 u=wigster n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 00:47:00,138 p=92417 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 00:47:00,143 p=92417 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 00:47:00,801 p=92417 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:47:00,811 p=92417 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 00:47:00,842 p=92417 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:47:00,847 p=92417 u=wigster n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 00:47:00,867 p=92417 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 00:47:00,886 p=92417 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 00:47:00,886 p=92417 u=wigster n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 00:47:56,499 p=92681 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 00:47:56,504 p=92681 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 00:47:57,165 p=92681 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:47:57,177 p=92681 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 00:47:57,206 p=92681 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:47:57,212 p=92681 u=wigster n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 00:47:57,230 p=92681 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 00:47:57,248 p=92681 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 00:47:57,248 p=92681 u=wigster n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 00:48:31,676 p=92897 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 00:48:31,681 p=92897 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 00:48:32,346 p=92897 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:48:32,356 p=92897 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 00:48:32,383 p=92897 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:48:32,388 p=92897 u=wigster n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 00:48:32,406 p=92897 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 00:48:32,410 p=92897 u=wigster n=ansible | TASK [metallb : Show first range entry] ********************************************************************************
+2025-04-08 00:48:32,428 p=92897 u=wigster n=ansible | ok: [localhost] => 
+  msg: 'The first range entry is: 192.168.10.100-192.168.10.100'
+2025-04-08 00:48:32,433 p=92897 u=wigster n=ansible | TASK [metallb : Show second range entry] *******************************************************************************
+2025-04-08 00:48:32,450 p=92897 u=wigster n=ansible | ok: [localhost] => 
+  msg: 'The second range entry is: 8.8.4.4-8.8.8.8'
+2025-04-08 00:48:32,468 p=92897 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 00:48:32,468 p=92897 u=wigster n=ansible | localhost                  : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 00:58:17,639 p=94531 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 00:58:17,644 p=94531 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 00:58:18,316 p=94531 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:58:18,325 p=94531 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 00:58:18,352 p=94531 u=wigster n=ansible | ok: [localhost]
+2025-04-08 00:58:18,357 p=94531 u=wigster n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 00:58:18,375 p=94531 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 00:58:18,379 p=94531 u=wigster n=ansible | TASK [metallb : Show first range entry] ********************************************************************************
+2025-04-08 00:58:18,397 p=94531 u=wigster n=ansible | ok: [localhost] => 
+  msg: 'The first range entry is: 192.168.10.100-192.168.10.100'
+2025-04-08 00:58:18,416 p=94531 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 00:58:18,416 p=94531 u=wigster n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 01:15:17,289 p=97310 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 01:15:17,295 p=97310 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 01:15:17,956 p=97310 u=wigster n=ansible | ok: [localhost]
+2025-04-08 01:15:17,967 p=97310 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 01:15:18,000 p=97310 u=wigster n=ansible | ok: [localhost]
+2025-04-08 01:15:18,005 p=97310 u=wigster n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 01:15:18,025 p=97310 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 01:15:18,030 p=97310 u=wigster n=ansible | TASK [metallb : Show first range entry] ********************************************************************************
+2025-04-08 01:15:18,049 p=97310 u=wigster n=ansible | ok: [localhost] => 
+  msg: 'The first range entry is: 192.168.10.100-192.168.10.100'
+2025-04-08 01:15:18,054 p=97310 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-08 01:15:18,088 p=97310 u=wigster n=ansible | fatal: [localhost]: UNREACHABLE! => changed=false 
+  msg: 'Failed to create temporary directory. In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in "/tmp", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p "` echo /tmp/.ansible/tmp `"&& mkdir "` echo /tmp/.ansible/tmp/ansible-tmp-1744067718.0720444-97421-25200526333642 `" && echo ansible-tmp-1744067718.0720444-97421-25200526333642="` echo /tmp/.ansible/tmp/ansible-tmp-1744067718.0720444-97421-25200526333642 `" ), exited with result 1'
+  unreachable: true
+2025-04-08 01:15:18,090 p=97310 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 01:15:18,090 p=97310 u=wigster n=ansible | localhost                  : ok=4    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 01:17:06,947 p=97759 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 01:17:06,952 p=97759 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 01:17:07,603 p=97759 u=wigster n=ansible | ok: [localhost]
+2025-04-08 01:17:07,613 p=97759 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 01:17:07,642 p=97759 u=wigster n=ansible | ok: [localhost]
+2025-04-08 01:17:07,647 p=97759 u=wigster n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 01:17:07,665 p=97759 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 01:17:07,669 p=97759 u=wigster n=ansible | TASK [metallb : Show first range entry] ********************************************************************************
+2025-04-08 01:17:07,686 p=97759 u=wigster n=ansible | ok: [localhost] => 
+  msg: 'The first range entry is: 192.168.10.100-192.168.10.100'
+2025-04-08 01:17:07,692 p=97759 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-08 01:17:07,714 p=97759 u=wigster n=ansible | fatal: [localhost]: UNREACHABLE! => changed=false 
+  msg: 'Failed to create temporary directory. In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in "/tmp", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p "` echo /tmp/.ansible/tmp `"&& mkdir "` echo /tmp/.ansible/tmp/ansible-tmp-1744067827.7071455-97870-258053901413168 `" && echo ansible-tmp-1744067827.7071455-97870-258053901413168="` echo /tmp/.ansible/tmp/ansible-tmp-1744067827.7071455-97870-258053901413168 `" ), exited with result 1'
+  unreachable: true
+2025-04-08 01:17:07,715 p=97759 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 01:17:07,715 p=97759 u=wigster n=ansible | localhost                  : ok=4    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 01:19:00,949 p=98166 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 01:19:00,954 p=98166 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 01:19:01,611 p=98166 u=wigster n=ansible | ok: [localhost]
+2025-04-08 01:19:01,620 p=98166 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 01:19:01,649 p=98166 u=wigster n=ansible | ok: [localhost]
+2025-04-08 01:19:01,653 p=98166 u=wigster n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 01:19:01,673 p=98166 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 01:19:01,678 p=98166 u=wigster n=ansible | TASK [metallb : Show first range entry] ********************************************************************************
+2025-04-08 01:19:01,696 p=98166 u=wigster n=ansible | ok: [localhost] => 
+  msg: 'The first range entry is: 192.168.10.100-192.168.10.100'
+2025-04-08 01:19:01,701 p=98166 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-08 01:19:01,723 p=98166 u=wigster n=ansible | fatal: [localhost]: UNREACHABLE! => changed=false 
+  msg: 'Failed to create temporary directory. In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in "/tmp", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p "` echo /tmp/.ansible/tmp `"&& mkdir "` echo /tmp/.ansible/tmp/ansible-tmp-1744067941.7179937-98277-142563761400658 `" && echo ansible-tmp-1744067941.7179937-98277-142563761400658="` echo /tmp/.ansible/tmp/ansible-tmp-1744067941.7179937-98277-142563761400658 `" ), exited with result 1'
+  unreachable: true
+2025-04-08 01:19:01,724 p=98166 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 01:19:01,724 p=98166 u=wigster n=ansible | localhost                  : ok=4    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 01:19:52,463 p=98441 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 01:19:52,468 p=98441 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 01:19:53,140 p=98441 u=wigster n=ansible | ok: [localhost]
+2025-04-08 01:19:53,150 p=98441 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 01:19:53,176 p=98441 u=wigster n=ansible | ok: [localhost]
+2025-04-08 01:19:53,181 p=98441 u=wigster n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 01:19:53,197 p=98441 u=wigster n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 01:19:53,201 p=98441 u=wigster n=ansible | TASK [metallb : Show first range entry] ********************************************************************************
+2025-04-08 01:19:53,218 p=98441 u=wigster n=ansible | ok: [localhost] => 
+  msg: 'The first range entry is: 192.168.10.100-192.168.10.100'
+2025-04-08 01:19:53,223 p=98441 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-08 01:19:53,244 p=98441 u=wigster n=ansible | fatal: [localhost]: UNREACHABLE! => changed=false 
+  msg: 'Failed to create temporary directory. In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in "/tmp", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p "` echo /tmp/.ansible/tmp `"&& mkdir "` echo /tmp/.ansible/tmp/ansible-tmp-1744067993.2395532-98552-26887108157520 `" && echo ansible-tmp-1744067993.2395532-98552-26887108157520="` echo /tmp/.ansible/tmp/ansible-tmp-1744067993.2395532-98552-26887108157520 `" ), exited with result 1'
+  unreachable: true
+2025-04-08 01:19:53,245 p=98441 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 01:19:53,246 p=98441 u=wigster n=ansible | localhost                  : ok=4    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 01:23:00,983 p=99077 u=root n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 01:23:00,988 p=99077 u=root n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 01:23:01,656 p=99077 u=root n=ansible | ok: [localhost]
+2025-04-08 01:23:01,666 p=99077 u=root n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 01:23:01,697 p=99077 u=root n=ansible | ok: [localhost]
+2025-04-08 01:23:01,702 p=99077 u=root n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 01:23:01,721 p=99077 u=root n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 01:23:01,727 p=99077 u=root n=ansible | TASK [metallb : Show first range entry] ********************************************************************************
+2025-04-08 01:23:01,746 p=99077 u=root n=ansible | ok: [localhost] => 
+  msg: 'The first range entry is: 192.168.10.100-192.168.10.100'
+2025-04-08 01:23:01,751 p=99077 u=root n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-08 01:23:02,160 p=99077 u=root n=ansible | changed: [localhost]
+2025-04-08 01:23:02,176 p=99077 u=root n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 01:23:02,177 p=99077 u=root n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 22:49:42,732 p=178509 u=root n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 22:49:42,738 p=178509 u=root n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 22:49:43,521 p=178509 u=root n=ansible | ok: [localhost]
+2025-04-08 22:49:43,535 p=178509 u=root n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 22:49:43,570 p=178509 u=root n=ansible | ok: [localhost]
+2025-04-08 22:49:43,575 p=178509 u=root n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 22:49:43,597 p=178509 u=root n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 22:49:43,603 p=178509 u=root n=ansible | TASK [metallb : Show first range entry] ********************************************************************************
+2025-04-08 22:49:43,623 p=178509 u=root n=ansible | ok: [localhost] => 
+  msg: 'The first range entry is: 192.168.10.100-192.168.10.100'
+2025-04-08 22:49:43,629 p=178509 u=root n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-08 22:49:44,094 p=178509 u=root n=ansible | ok: [localhost]
+2025-04-08 22:49:44,116 p=178509 u=root n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 22:49:44,116 p=178509 u=root n=ansible | localhost                  : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 22:51:11,865 p=178886 u=root n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 22:51:11,872 p=178886 u=root n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 22:51:12,804 p=178886 u=root n=ansible | ok: [localhost]
+2025-04-08 22:51:12,818 p=178886 u=root n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 22:51:12,857 p=178886 u=root n=ansible | ok: [localhost]
+2025-04-08 22:51:12,862 p=178886 u=root n=ansible | TASK [metallb : Debug cleaned metallb_ranges input] ********************************************************************
+2025-04-08 22:51:12,885 p=178886 u=root n=ansible | ok: [localhost] => 
+  metallb_ranges_clean:
+  - 192.168.10.100-192.168.10.100
+  - 8.8.4.4-8.8.8.8
+2025-04-08 22:51:12,890 p=178886 u=root n=ansible | TASK [metallb : Show first range entry] ********************************************************************************
+2025-04-08 22:51:12,911 p=178886 u=root n=ansible | ok: [localhost] => 
+  msg: 'The first range entry is: 192.168.10.100-192.168.10.100'
+2025-04-08 22:51:12,917 p=178886 u=root n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-08 22:51:13,401 p=178886 u=root n=ansible | changed: [localhost]
+2025-04-08 22:51:13,436 p=178886 u=root n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 22:51:13,437 p=178886 u=root n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 22:53:38,057 p=179419 u=root n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 22:53:38,064 p=179419 u=root n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 22:53:38,870 p=179419 u=root n=ansible | ok: [localhost]
+2025-04-08 22:53:38,886 p=179419 u=root n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 22:53:38,926 p=179419 u=root n=ansible | ok: [localhost]
+2025-04-08 22:53:38,931 p=179419 u=root n=ansible | TASK [metallb : debug each macvlan] ************************************************************************************
+2025-04-08 22:53:38,968 p=179419 u=root n=ansible | fatal: [localhost]: FAILED! => 
+  msg: |-
+    The task includes an option with an undefined variable. The error was: list object has no element 1. list object has no element 1
+  
+    The error appears to be in '/opt/docker/sensie_build/roles/metallb/tasks/main.yml': line 23, column 3, but may
+    be elsewhere in the file depending on the exact syntax problem.
+  
+    The offending line appears to be:
+  
+  
+    - name: debug each macvlan
+      ^ here
+2025-04-08 22:53:38,969 p=179419 u=root n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 22:53:38,970 p=179419 u=root n=ansible | localhost                  : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-08 22:55:04,761 p=179791 u=root n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 22:55:04,770 p=179791 u=root n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 22:55:05,675 p=179791 u=root n=ansible | ok: [localhost]
+2025-04-08 22:55:05,691 p=179791 u=root n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 22:55:05,729 p=179791 u=root n=ansible | ok: [localhost]
+2025-04-08 22:55:05,734 p=179791 u=root n=ansible | TASK [metallb : debug each macvlan] ************************************************************************************
+2025-04-08 22:55:05,773 p=179791 u=root n=ansible | ok: [localhost] => 
+  msg:
+  - - 192.168.10.100-192.168.10.100
+  - - 8.8.4.4-8.8.8.8
+2025-04-08 22:55:05,779 p=179791 u=root n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-08 22:55:06,291 p=179791 u=root n=ansible | changed: [localhost]
+2025-04-08 22:55:06,314 p=179791 u=root n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 22:55:06,314 p=179791 u=root n=ansible | localhost                  : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 23:26:26,037 p=184745 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 23:26:26,043 p=184745 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 23:26:26,872 p=184745 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:26:26,885 p=184745 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 23:26:26,922 p=184745 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:26:26,928 p=184745 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-08 23:26:26,958 p=184745 u=wigster n=ansible | fatal: [localhost]: UNREACHABLE! => changed=false 
+  msg: 'Failed to create temporary directory. In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in "/tmp", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p "` echo /tmp/.ansible/tmp `"&& mkdir "` echo /tmp/.ansible/tmp/ansible-tmp-1744147586.9514368-184874-143122270611563 `" && echo ansible-tmp-1744147586.9514368-184874-143122270611563="` echo /tmp/.ansible/tmp/ansible-tmp-1744147586.9514368-184874-143122270611563 `" ), exited with result 1'
+  unreachable: true
+2025-04-08 23:26:26,960 p=184745 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 23:26:26,960 p=184745 u=wigster n=ansible | localhost                  : ok=2    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 23:26:53,660 p=184965 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 23:26:53,666 p=184965 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 23:26:54,494 p=184965 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:26:54,514 p=184965 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 23:26:54,555 p=184965 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:26:54,562 p=184965 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-08 23:26:54,591 p=184965 u=wigster n=ansible | fatal: [localhost]: UNREACHABLE! => changed=false 
+  msg: 'Failed to create temporary directory. In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in "/tmp", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p "` echo /tmp/.ansible/tmp `"&& mkdir "` echo /tmp/.ansible/tmp/ansible-tmp-1744147614.584795-185072-79167130330057 `" && echo ansible-tmp-1744147614.584795-185072-79167130330057="` echo /tmp/.ansible/tmp/ansible-tmp-1744147614.584795-185072-79167130330057 `" ), exited with result 1'
+  unreachable: true
+2025-04-08 23:26:54,592 p=184965 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 23:26:54,592 p=184965 u=wigster n=ansible | localhost                  : ok=2    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 23:29:48,269 p=185562 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 23:29:48,276 p=185562 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 23:29:49,159 p=185562 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:29:49,174 p=185562 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 23:29:49,214 p=185562 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:29:49,219 p=185562 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-08 23:29:49,739 p=185562 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:29:49,763 p=185562 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 23:29:49,763 p=185562 u=wigster n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 23:30:10,991 p=185778 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 23:30:10,997 p=185778 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 23:30:11,831 p=185778 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:30:11,845 p=185778 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-08 23:30:11,881 p=185778 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:30:11,887 p=185778 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-08 23:30:12,407 p=185778 u=wigster n=ansible | changed: [localhost]
+2025-04-08 23:30:12,429 p=185778 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 23:30:12,429 p=185778 u=wigster n=ansible | localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-08 23:32:29,023 p=186261 u=wigster n=ansible | Starting galaxy collection install process
+2025-04-08 23:32:29,023 p=186261 u=wigster n=ansible | Process install dependency map
+2025-04-08 23:32:29,023 p=186261 u=wigster n=ansible | |
+2025-04-08 23:32:29,124 p=186261 u=wigster n=ansible | /
+2025-04-08 23:32:29,225 p=186261 u=wigster n=ansible | -
+2025-04-08 23:32:29,325 p=186261 u=wigster n=ansible | \
+2025-04-08 23:32:29,426 p=186261 u=wigster n=ansible | |
+2025-04-08 23:32:29,527 p=186261 u=wigster n=ansible | /
+2025-04-08 23:32:29,628 p=186261 u=wigster n=ansible | -
+2025-04-08 23:32:29,729 p=186261 u=wigster n=ansible | \
+2025-04-08 23:32:29,830 p=186261 u=wigster n=ansible | |
+2025-04-08 23:32:29,931 p=186261 u=wigster n=ansible | /
+2025-04-08 23:32:30,032 p=186261 u=wigster n=ansible | -
+2025-04-08 23:32:30,132 p=186261 u=wigster n=ansible | \
+2025-04-08 23:32:30,233 p=186261 u=wigster n=ansible | |
+2025-04-08 23:32:30,334 p=186261 u=wigster n=ansible | /
+2025-04-08 23:32:30,434 p=186261 u=wigster n=ansible | -
+2025-04-08 23:32:30,535 p=186261 u=wigster n=ansible | \
+2025-04-08 23:32:30,636 p=186261 u=wigster n=ansible | |
+2025-04-08 23:32:30,737 p=186261 u=wigster n=ansible | /
+2025-04-08 23:32:30,837 p=186261 u=wigster n=ansible | -
+2025-04-08 23:32:30,938 p=186261 u=wigster n=ansible | \
+2025-04-08 23:32:31,039 p=186261 u=wigster n=ansible | |
+2025-04-08 23:32:31,140 p=186261 u=wigster n=ansible | /
+2025-04-08 23:32:31,241 p=186261 u=wigster n=ansible | -
+2025-04-08 23:32:31,342 p=186261 u=wigster n=ansible | Starting collection install process
+2025-04-08 23:32:31,342 p=186261 u=wigster n=ansible | |
+2025-04-08 23:32:31,349 p=186261 u=wigster n=ansible | Downloading https://galaxy.ansible.com/api/v3/plugin/ansible/content/published/collections/artifacts/kubernetes-core-5.2.0.tar.gz to /tmp/ansible-local-186261bq0za97n/tmp3nkmo6i5/kubernetes-core-5.2.0-fxszy9sm
+2025-04-08 23:32:31,444 p=186261 u=wigster n=ansible | /
+2025-04-08 23:32:31,545 p=186261 u=wigster n=ansible | -
+2025-04-08 23:32:31,645 p=186261 u=wigster n=ansible | \
+2025-04-08 23:32:31,746 p=186261 u=wigster n=ansible | |
+2025-04-08 23:32:31,847 p=186261 u=wigster n=ansible | /
+2025-04-08 23:32:31,947 p=186261 u=wigster n=ansible | -
+2025-04-08 23:32:32,048 p=186261 u=wigster n=ansible | \
+2025-04-08 23:32:32,149 p=186261 u=wigster n=ansible | |
+2025-04-08 23:32:32,250 p=186261 u=wigster n=ansible | /
+2025-04-08 23:32:32,351 p=186261 u=wigster n=ansible | -
+2025-04-08 23:32:32,452 p=186261 u=wigster n=ansible | \
+2025-04-08 23:32:32,552 p=186261 u=wigster n=ansible | |
+2025-04-08 23:32:32,653 p=186261 u=wigster n=ansible | /
+2025-04-08 23:32:32,754 p=186261 u=wigster n=ansible | -
+2025-04-08 23:32:32,854 p=186261 u=wigster n=ansible | \
+2025-04-08 23:32:32,955 p=186261 u=wigster n=ansible | Installing 'kubernetes.core:5.2.0' to '/home/wigster/.ansible/collections/ansible_collections/kubernetes/core'
+2025-04-08 23:32:32,955 p=186261 u=wigster n=ansible | |
+2025-04-08 23:32:33,056 p=186261 u=wigster n=ansible | /
+2025-04-08 23:32:33,156 p=186261 u=wigster n=ansible | kubernetes.core:5.2.0 was installed successfully
+2025-04-08 23:36:11,570 p=186907 u=wigster n=ansible | [WARNING]: Collection kubernetes.core does not support Ansible version 2.14.18
+
+2025-04-08 23:36:11,630 p=186907 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 23:36:11,636 p=186907 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 23:36:12,456 p=186907 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:36:12,479 p=186907 u=wigster n=ansible | TASK [metallb : Check K8s connectivity by listing namespaces] **********************************************************
+2025-04-08 23:36:12,942 p=186907 u=wigster n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: Failed to import the required Python library (kubernetes) on k3stest.virt.baltsch.com's Python /usr/bin/python3. Please read the module documentation and install it in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter
+2025-04-08 23:36:12,943 p=186907 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 23:36:12,943 p=186907 u=wigster n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-08 23:39:18,628 p=187503 u=wigster n=ansible | [WARNING]: Collection kubernetes.core does not support Ansible version 2.14.18
+
+2025-04-08 23:39:18,682 p=187503 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 23:39:18,689 p=187503 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 23:39:19,564 p=187503 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:39:19,585 p=187503 u=wigster n=ansible | TASK [metallb : Check K8s connectivity by listing namespaces] **********************************************************
+2025-04-08 23:39:19,997 p=187503 u=wigster n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: Failed to import the required Python library (kubernetes) on k3stest.virt.baltsch.com's Python /usr/bin/python3. Please read the module documentation and install it in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter
+2025-04-08 23:39:19,998 p=187503 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 23:39:19,998 p=187503 u=wigster n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-08 23:40:57,339 p=187921 u=wigster n=ansible | [WARNING]: Collection kubernetes.core does not support Ansible version 2.14.18
+
+2025-04-08 23:40:57,387 p=187921 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 23:40:57,396 p=187921 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 23:40:58,254 p=187921 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:40:58,267 p=187921 u=wigster n=ansible | TASK [metallb : Ensure kubernetes Python library is installed on target] ***********************************************
+2025-04-08 23:40:58,737 p=187921 u=wigster n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  cmd: '''/usr/bin/python3 -m pip'' install kubernetes'
+  msg: '[Errno 2] No such file or directory: b''/usr/bin/python3 -m pip'''
+  rc: 2
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-04-08 23:40:58,738 p=187921 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 23:40:58,738 p=187921 u=wigster n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-08 23:45:14,021 p=188705 u=wigster n=ansible | [WARNING]: Collection kubernetes.core does not support Ansible version 2.14.18
+
+2025-04-08 23:45:14,061 p=188705 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-08 23:45:14,070 p=188705 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-08 23:45:15,022 p=188705 u=wigster n=ansible | ok: [localhost]
+2025-04-08 23:45:15,036 p=188705 u=wigster n=ansible | TASK [metallb : Ensure pip is installed for system Python 3] ***********************************************************
+2025-04-08 23:45:55,851 p=188705 u=wigster n=ansible | changed: [localhost]
+2025-04-08 23:45:55,858 p=188705 u=wigster n=ansible | TASK [metallb : Ensure kubernetes Python library is installed on target] ***********************************************
+2025-04-08 23:45:56,279 p=188705 u=wigster n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  cmd: '''/usr/bin/python3 -m pip'' install kubernetes'
+  msg: '[Errno 2] No such file or directory: b''/usr/bin/python3 -m pip'''
+  rc: 2
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-04-08 23:45:56,280 p=188705 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-08 23:45:56,281 p=188705 u=wigster n=ansible | localhost                  : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-04-09 00:10:43,335 p=194386 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-09 00:10:43,342 p=194386 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-09 00:10:44,198 p=194386 u=wigster n=ansible | ok: [localhost]
+2025-04-09 00:10:44,211 p=194386 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-09 00:10:44,254 p=194386 u=wigster n=ansible | ok: [localhost]
+2025-04-09 00:10:44,260 p=194386 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-09 00:10:44,778 p=194386 u=wigster n=ansible | changed: [localhost]
+2025-04-09 00:10:44,800 p=194386 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-09 00:10:44,801 p=194386 u=wigster n=ansible | localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-09 00:11:18,973 p=194627 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-09 00:11:18,983 p=194627 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-09 00:11:19,821 p=194627 u=wigster n=ansible | ok: [localhost]
+2025-04-09 00:11:19,836 p=194627 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-09 00:11:19,876 p=194627 u=wigster n=ansible | ok: [localhost]
+2025-04-09 00:11:19,882 p=194627 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-09 00:11:20,409 p=194627 u=wigster n=ansible | changed: [localhost]
+2025-04-09 00:11:20,438 p=194627 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-09 00:11:20,438 p=194627 u=wigster n=ansible | localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-09 00:11:39,081 p=194821 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-09 00:11:39,099 p=194821 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-09 00:11:40,130 p=194821 u=wigster n=ansible | ok: [localhost]
+2025-04-09 00:11:40,143 p=194821 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-09 00:11:40,179 p=194821 u=wigster n=ansible | ok: [localhost]
+2025-04-09 00:11:40,185 p=194821 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-09 00:11:40,698 p=194821 u=wigster n=ansible | changed: [localhost]
+2025-04-09 00:11:40,722 p=194821 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-09 00:11:40,722 p=194821 u=wigster n=ansible | localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-09 00:11:55,719 p=195022 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-09 00:11:55,725 p=195022 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-09 00:11:56,558 p=195022 u=wigster n=ansible | ok: [localhost]
+2025-04-09 00:11:56,576 p=195022 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-09 00:11:56,618 p=195022 u=wigster n=ansible | ok: [localhost]
+2025-04-09 00:11:56,623 p=195022 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-09 00:11:57,168 p=195022 u=wigster n=ansible | changed: [localhost]
+2025-04-09 00:11:57,189 p=195022 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-09 00:11:57,189 p=195022 u=wigster n=ansible | localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-09 00:12:17,939 p=195214 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-09 00:12:17,946 p=195214 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-09 00:12:18,801 p=195214 u=wigster n=ansible | ok: [localhost]
+2025-04-09 00:12:18,814 p=195214 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-09 00:12:18,854 p=195214 u=wigster n=ansible | ok: [localhost]
+2025-04-09 00:12:18,859 p=195214 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-09 00:12:19,373 p=195214 u=wigster n=ansible | changed: [localhost]
+2025-04-09 00:12:19,395 p=195214 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-09 00:12:19,396 p=195214 u=wigster n=ansible | localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-09 00:12:52,966 p=195436 u=wigster n=ansible | PLAY [localhost] *******************************************************************************************************
+2025-04-09 00:12:52,973 p=195436 u=wigster n=ansible | TASK [Gathering Facts] *************************************************************************************************
+2025-04-09 00:12:53,857 p=195436 u=wigster n=ansible | ok: [localhost]
+2025-04-09 00:12:53,870 p=195436 u=wigster n=ansible | TASK [metallb : Parse and validate metallb_ranges input] ***************************************************************
+2025-04-09 00:12:53,909 p=195436 u=wigster n=ansible | ok: [localhost]
+2025-04-09 00:12:53,914 p=195436 u=wigster n=ansible | TASK [metallb : Generate MetalLB values file from IP range list] *******************************************************
+2025-04-09 00:12:54,458 p=195436 u=wigster n=ansible | changed: [localhost]
+2025-04-09 00:12:54,480 p=195436 u=wigster n=ansible | PLAY RECAP *************************************************************************************************************
+2025-04-09 00:12:54,480 p=195436 u=wigster n=ansible | localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
